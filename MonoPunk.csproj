@@ -5,10 +5,12 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7A94864D-E061-4FDB-9853-6591F6B4ABF3}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{C4927245-5F07-42DB-9850-9E5E7847B67B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <RootNamespace>MonoPunk</RootNamespace>
     <AssemblyName>MonoPunk</AssemblyName>
+    <ProjectTypeGuids>{948B3504-5B70-4649-8FE4-BDE1FB46EC69};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -16,33 +18,100 @@
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug</OutputPath>
     <DefineConstants>DEBUG;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <CreatePackage>false</CreatePackage>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <UseSGen>false</UseSGen>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>none</DebugType>
-    <Optimize>false</Optimize>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <CodeSigningKey>Developer ID Application</CodeSigningKey>
+    <CreatePackage>true</CreatePackage>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <UseSGen>false</UseSGen>
+    <LinkMode>Full</LinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\AppStore</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <ConsolePause>false</ConsolePause>
+    <LinkMode>Full</LinkMode>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+    <CreatePackage>true</CreatePackage>
+    <CodeSigningKey>3rd Party Mac Developer Application</CodeSigningKey>
+    <EnablePackageSigning>true</EnablePackageSigning>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Compile Include="Engine.cs" />
-    <Compile Include="Entity.cs" />
-    <Compile Include="Graphic.cs" />
-    <Compile Include="Mask.cs" />
-    <Compile Include="MP.cs" />
-    <Compile Include="World.cs" />
-    <Compile Include="graphics\Image.cs" />
-    <Compile Include="masks\Hitbox.cs" />
-    <Compile Include="utils\Input.cs" />
-    <Compile Include="graphics\Spritemap.cs" />
-    <Compile Include="graphics\Anim.cs" />
-    <Compile Include="graphics\Backdrop.cs" />
-    <Compile Include="graphics\Tilemap.cs" />
+    <Compile Include="Game1.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MonoPunk\MP.cs" />
+    <Compile Include="MonoPunk\Engine.cs" />
+    <Compile Include="MonoPunk\Entity.cs" />
+    <Compile Include="MonoPunk\Graphic.cs" />
+    <Compile Include="MonoPunk\Mask.cs" />
+    <Compile Include="MonoPunk\Screen.cs" />
+    <Compile Include="MonoPunk\Sfx.cs" />
+    <Compile Include="MonoPunk\Tween.cs" />
+    <Compile Include="MonoPunk\Tweener.cs" />
+    <Compile Include="MonoPunk\World.cs" />
+    <Compile Include="MonoPunk\Utils\Data.cs" />
+    <Compile Include="MonoPunk\Utils\Draw.cs" />
+    <Compile Include="MonoPunk\Utils\Ease.cs" />
+    <Compile Include="MonoPunk\Utils\Input.cs" />
+    <Compile Include="MonoPunk\Utils\Key.cs" />
+    <Compile Include="MonoPunk\Debug\Console.cs" />
+    <Compile Include="MonoPunk\Graphics\Anim.cs" />
+    <Compile Include="MonoPunk\Graphics\Backdrop.cs" />
+    <Compile Include="MonoPunk\Graphics\Canvas.cs" />
+    <Compile Include="MonoPunk\Graphics\Emitter.cs" />
+    <Compile Include="MonoPunk\Graphics\GraphicList.cs" />
+    <Compile Include="MonoPunk\Graphics\Image.cs" />
+    <Compile Include="MonoPunk\Graphics\Particle.cs" />
+    <Compile Include="MonoPunk\Graphics\ParticleType.cs" />
+    <Compile Include="MonoPunk\Graphics\PreRotation.cs" />
+    <Compile Include="MonoPunk\Graphics\SpriteRotation.cs" />
+    <Compile Include="MonoPunk\Graphics\Stamp.cs" />
+    <Compile Include="MonoPunk\Graphics\Text.cs" />
+    <Compile Include="MonoPunk\Graphics\TiledImage.cs" />
+    <Compile Include="MonoPunk\Graphics\TiledSpritemap.cs" />
+    <Compile Include="MonoPunk\Graphics\Spritemap.cs" />
+    <Compile Include="MonoPunk\Graphics\Tilemap.cs" />
+    <Compile Include="MonoPunk\Masks\Grid.cs" />
+    <Compile Include="MonoPunk\Masks\Hitbox.cs" />
+    <Compile Include="MonoPunk\Masks\Masklist.cs" />
+    <Compile Include="MonoPunk\Masks\Pixelmask.cs" />
+    <Compile Include="MonoPunk\Tweens\Misc\Alarm.cs" />
+    <Compile Include="MonoPunk\Tweens\Misc\AngleTween.cs" />
+    <Compile Include="MonoPunk\Tweens\Misc\ColorTween.cs" />
+    <Compile Include="MonoPunk\Tweens\Misc\MultiVarTween.cs" />
+    <Compile Include="MonoPunk\Tweens\Misc\NumTween.cs" />
+    <Compile Include="MonoPunk\Tweens\Misc\VarTween.cs" />
+    <Compile Include="MonoPunk\Tweens\Motion\CircularMotion.cs" />
+    <Compile Include="MonoPunk\Tweens\Motion\CubicMotion.cs" />
+    <Compile Include="MonoPunk\Tweens\Motion\LinearMotion.cs" />
+    <Compile Include="MonoPunk\Tweens\Motion\LinearPath.cs" />
+    <Compile Include="MonoPunk\Tweens\Motion\Motion.cs" />
+    <Compile Include="MonoPunk\Tweens\Motion\QuadMotion.cs" />
+    <Compile Include="MonoPunk\Tweens\Motion\QuadPath.cs" />
+    <Compile Include="MonoPunk\Tweens\Sound\Fader.cs" />
+    <Compile Include="MonoPunk\Tweens\Sound\SfxFader.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -50,14 +119,95 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="MonoGame.Framework, Version=3.0.0.0, Culture=neutral">
-      <Private>False</Private>
+    <Reference Include="MonoMac">
+      <HintPath>..\..\..\SDKs\MONOGAME\MonoGame-develop\MonoGame.Framework\bin\MacOS\Release\MonoMac.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>..\..\..\SDKs\MONOGAME\MonoGame-develop\MonoGame.Framework\bin\MacOS\Release\MonoGame.Framework.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="README.txt" />
+    <None Include="Info.plist" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="utils\" />
+    <BundleResource Include="Content\logo.png" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <DotNetNamingPolicy DirectoryNamespaceAssociation="Hierarchical" ResourceNamePolicy="FileName" />
+          <TextStylePolicy TabsToSpaces="False" inheritsSet="VisualStudio" inheritsScope="text/plain" scope="text/x-csharp" />
+          <CSharpFormattingPolicy AfterDelegateDeclarationParameterComma="True" inheritsSet="Mono" inheritsScope="text/x-csharp" scope="text/x-csharp" />
+          <TextStylePolicy inheritsSet="Mono" inheritsScope="text/plain" scope="text/plain" />
+          <StandardHeader Text=" &#xA; ${FileName}&#xA; &#xA; Author:&#xA;      ${AuthorName} &lt;${AuthorEmail}&gt;&#xA;&#xA;&#xA; This program is free software: you can redistribute it and/or modify&#xA; it under the terms of the GNU General Public License as published by&#xA; the Free Software Foundation, either version 3 of the License, or&#xA; (at your option) any later version.&#xA;&#xA; This program is distributed in the hope that it will be useful,&#xA; but WITHOUT ANY WARRANTY; without even the implied warranty of&#xA; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the&#xA; GNU General Public License for more details.&#xA;&#xA; You should have received a copy of the GNU General Public License&#xA; along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;." IncludeInNewFiles="True" />
+          <NameConventionPolicy>
+            <Rules>
+              <NamingRule Name="Namespaces" AffectedEntity="Namespace" VisibilityMask="VisibilityMask" NamingStyle="PascalCase" IncludeInstanceMembers="True" IncludeStaticEntities="True" />
+              <NamingRule Name="Types" AffectedEntity="Class, Struct, Enum, Delegate" VisibilityMask="VisibilityMask" NamingStyle="PascalCase" IncludeInstanceMembers="True" IncludeStaticEntities="True" />
+              <NamingRule Name="Interfaces" AffectedEntity="Interface" VisibilityMask="VisibilityMask" NamingStyle="PascalCase" IncludeInstanceMembers="True" IncludeStaticEntities="True">
+                <RequiredPrefixes>
+                  <String>I</String>
+                </RequiredPrefixes>
+              </NamingRule>
+              <NamingRule Name="Attributes" AffectedEntity="CustomAttributes" VisibilityMask="VisibilityMask" NamingStyle="PascalCase" IncludeInstanceMembers="True" IncludeStaticEntities="True">
+                <RequiredSuffixes>
+                  <String>Attribute</String>
+                </RequiredSuffixes>
+              </NamingRule>
+              <NamingRule Name="Event Arguments" AffectedEntity="CustomEventArgs" VisibilityMask="VisibilityMask" NamingStyle="PascalCase" IncludeInstanceMembers="True" IncludeStaticEntities="True">
+                <RequiredSuffixes>
+                  <String>EventArgs</String>
+                </RequiredSuffixes>
+              </NamingRule>
+              <NamingRule Name="Exceptions" AffectedEntity="CustomExceptions" VisibilityMask="VisibilityMask" NamingStyle="PascalCase" IncludeInstanceMembers="True" IncludeStaticEntities="True">
+                <RequiredSuffixes>
+                  <String>Exception</String>
+                </RequiredSuffixes>
+              </NamingRule>
+              <NamingRule Name="Methods" AffectedEntity="Methods" VisibilityMask="VisibilityMask" NamingStyle="PascalCase" IncludeInstanceMembers="True" IncludeStaticEntities="True" />
+              <NamingRule Name="Static Readonly Fields" AffectedEntity="ReadonlyField" VisibilityMask="Internal, Protected, Public" NamingStyle="PascalCase" IncludeInstanceMembers="False" IncludeStaticEntities="True" />
+              <NamingRule Name="Fields (Non Private)" AffectedEntity="Field" VisibilityMask="Internal, Protected, Public" NamingStyle="PascalCase" IncludeInstanceMembers="True" IncludeStaticEntities="True" />
+              <NamingRule Name="ReadOnly Fields (Non Private)" AffectedEntity="ReadonlyField" VisibilityMask="Internal, Protected, Public" NamingStyle="PascalCase" IncludeInstanceMembers="True" IncludeStaticEntities="False" />
+              <NamingRule Name="Fields (Private)" AffectedEntity="Field, ReadonlyField" VisibilityMask="Private" NamingStyle="CamelCase" IncludeInstanceMembers="True" IncludeStaticEntities="False">
+                <AllowedPrefixes>
+                  <String>_</String>
+                  <String>m_</String>
+                </AllowedPrefixes>
+              </NamingRule>
+              <NamingRule Name="Static Fields (Private)" AffectedEntity="Field" VisibilityMask="Private" NamingStyle="CamelCase" IncludeInstanceMembers="False" IncludeStaticEntities="True" />
+              <NamingRule Name="ReadOnly Fields (Private)" AffectedEntity="ReadonlyField" VisibilityMask="Private" NamingStyle="CamelCase" IncludeInstanceMembers="True" IncludeStaticEntities="False">
+                <AllowedPrefixes>
+                  <String>_</String>
+                  <String>m_</String>
+                </AllowedPrefixes>
+              </NamingRule>
+              <NamingRule Name="Constant Fields" AffectedEntity="ConstantField" VisibilityMask="VisibilityMask" NamingStyle="PascalCase" IncludeInstanceMembers="True" IncludeStaticEntities="True" />
+              <NamingRule Name="Properties" AffectedEntity="Property" VisibilityMask="VisibilityMask" NamingStyle="PascalCase" IncludeInstanceMembers="True" IncludeStaticEntities="True" />
+              <NamingRule Name="Events" AffectedEntity="Event" VisibilityMask="VisibilityMask" NamingStyle="PascalCase" IncludeInstanceMembers="True" IncludeStaticEntities="True" />
+              <NamingRule Name="Enum Members" AffectedEntity="EnumMember" VisibilityMask="VisibilityMask" NamingStyle="PascalCase" IncludeInstanceMembers="True" IncludeStaticEntities="True" />
+              <NamingRule Name="Parameters" AffectedEntity="Parameter" VisibilityMask="VisibilityMask" NamingStyle="CamelCase" IncludeInstanceMembers="True" IncludeStaticEntities="True" />
+              <NamingRule Name="Type Parameters" AffectedEntity="TypeParameter" VisibilityMask="VisibilityMask" NamingStyle="PascalCase" IncludeInstanceMembers="True" IncludeStaticEntities="True">
+                <RequiredPrefixes>
+                  <String>T</String>
+                </RequiredPrefixes>
+              </NamingRule>
+            </Rules>
+          </NameConventionPolicy>
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+  <ItemGroup>
+    <Folder Include="MonoPunk\" />
+    <Folder Include="MonoPunk\Debug\" />
+    <Folder Include="MonoPunk\Graphics\" />
+    <Folder Include="MonoPunk\Masks\" />
+    <Folder Include="MonoPunk\Tweens\" />
+    <Folder Include="MonoPunk\Utils\" />
+    <Folder Include="MonoPunk\Tweens\Misc\" />
+    <Folder Include="MonoPunk\Tweens\Motion\" />
+    <Folder Include="MonoPunk\Tweens\Sound\" />
+    <Folder Include="MonoPunk\Plugins\" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,16 @@
+﻿<Properties MonoDevelop.MonoMac.LastXamMacNagTime="03/25/2014 05:41:28">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MonoPunk/Entity.cs">
+    <Files>
+      <File FileName="MonoPunk/Engine.cs" Line="31" Column="15" />
+      <File FileName="MonoPunk/World.cs" Line="28" Column="17" />
+      <File FileName="MonoPunk/MP.cs" Line="62" Column="4" />
+      <File FileName="MonoPunk/Entity.cs" Line="590" Column="19" />
+      <File FileName="MonoPunk/Tweener.cs" Line="61" Column="11" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
