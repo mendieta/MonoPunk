@@ -1,4 +1,4 @@
-﻿MONOPUNK Alpha 0.1
+﻿MonoPunk Alpha 0.1
 ==================
 
 ABOUT
